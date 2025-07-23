@@ -31,6 +31,10 @@ A modern, full-featured calculator web application with memory functions, scient
 *   Node.js (version 18 or higher is recommended)
 *   npm or yarn package manager
 
+
+**##Deployed Link**
+*https://dusk-calc-zen.vercel.app/
+
 ## Installation Instructions
 
 1.  Clone the repository:
