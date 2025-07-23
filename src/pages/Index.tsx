@@ -1,6 +1,5 @@
 import Calculator from '@/components/Calculator';
 import DarkModeToggle from '@/components/DarkModeToggle';
-import calculatorHero from '@/assets/calculator-hero.jpg';
 
 const Index = () => {
   return (
@@ -17,20 +16,8 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
-          {/* Calculator Image */}
-          <div className="flex-1 max-w-md">
-            <img 
-              src={calculatorHero} 
-              alt="Modern Calculator Design"
-              className="w-full h-auto rounded-2xl shadow-2xl"
-            />
-          </div>
-
-          {/* Actual Calculator */}
-          <div className="flex-1 max-w-sm">
-            <Calculator />
-          </div>
+        <div className="flex justify-center">
+          <Calculator />
         </div>
 
         {/* Features */}
