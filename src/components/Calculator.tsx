@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { CardContainer, CardBody, CardItem } from '@/components/ui/3d-card';
 
 type CalculatorState = {
   display: string;
@@ -211,239 +212,247 @@ const Calculator = () => {
   };
 
   return (
-    <Card className="w-full max-w-sm mx-auto bg-gradient-surface border-0 shadow-2xl">
-      {/* Display */}
-      <div className="p-6 pb-4">
-        <div className="bg-calc-display text-calc-display-text p-4 rounded-lg text-right text-3xl font-mono min-h-[60px] flex items-center justify-end shadow-inner">
-          {formatDisplay(state.display)}
-        </div>
-        {state.memory !== 0 && (
-          <div className="text-xs text-muted-foreground mt-1 text-right">M</div>
-        )}
-      </div>
+    <CardContainer className="inter-var">
+      <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-primary/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+        <Card className="w-full max-w-sm mx-auto bg-gradient-surface border-0 shadow-2xl relative">
+          {/* Display */}
+          <CardItem translateZ="50" className="w-full">
+            <div className="p-6 pb-4">
+              <div className="bg-calc-display text-calc-display-text p-4 rounded-lg text-right text-3xl font-mono min-h-[60px] flex items-center justify-end shadow-inner">
+                {formatDisplay(state.display)}
+              </div>
+              {state.memory !== 0 && (
+                <div className="text-xs text-muted-foreground mt-1 text-right">M</div>
+              )}
+            </div>
+          </CardItem>
 
-      {/* Button Grid */}
-      <div className="p-6 pt-0 grid grid-cols-4 gap-3">
-        {/* Row 1: Memory & Clear functions */}
-        <Button
-          onClick={memoryClear}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          MC
-        </Button>
-        <Button
-          onClick={memoryRecall}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          MR
-        </Button>
-        <Button
-          onClick={memoryMinus}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          M-
-        </Button>
-        <Button
-          onClick={memoryPlus}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          M+
-        </Button>
+          {/* Button Grid */}
+          <CardItem translateZ="30" className="w-full">
+            <div className="p-6 pt-0 grid grid-cols-4 gap-3">
+              {/* Row 1: Memory & Clear functions */}
+              <Button
+                onClick={memoryClear}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                MC
+              </Button>
+              <Button
+                onClick={memoryRecall}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                MR
+              </Button>
+              <Button
+                onClick={memoryMinus}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                M-
+              </Button>
+              <Button
+                onClick={memoryPlus}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                M+
+              </Button>
 
-        {/* Row 2: Clear & Advanced functions */}
-        <Button
-          onClick={clear}
-          className="bg-destructive hover:bg-destructive/90 text-destructive-foreground font-semibold"
-          size="lg"
-        >
-          AC
-        </Button>
-        <Button
-          onClick={clearEntry}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          CE
-        </Button>
-        <Button
-          onClick={percentage}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          %
-        </Button>
-        <Button
-          onClick={() => performOperation('÷')}
-          className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
-          size="lg"
-        >
-          ÷
-        </Button>
+              {/* Row 2: Clear & Advanced functions */}
+              <Button
+                onClick={clear}
+                className="bg-destructive hover:bg-destructive/90 text-destructive-foreground font-semibold"
+                size="lg"
+              >
+                AC
+              </Button>
+              <Button
+                onClick={clearEntry}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                CE
+              </Button>
+              <Button
+                onClick={percentage}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                %
+              </Button>
+              <Button
+                onClick={() => performOperation('÷')}
+                className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
+                size="lg"
+              >
+                ÷
+              </Button>
 
-        {/* Row 3: Scientific functions */}
-        <Button
-          onClick={squareRoot}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm"
-          size="lg"
-        >
-          √x
-        </Button>
-        <Button
-          onClick={() => performOperation('xy')}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm"
-          size="lg"
-        >
-          x^y
-        </Button>
-        <Button
-          onClick={addPi}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          π
-        </Button>
-        <Button
-          onClick={() => performOperation('×')}
-          className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
-          size="lg"
-        >
-          ×
-        </Button>
+              {/* Row 3: Scientific functions */}
+              <Button
+                onClick={squareRoot}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm"
+                size="lg"
+              >
+                √x
+              </Button>
+              <Button
+                onClick={() => performOperation('xy')}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm"
+                size="lg"
+              >
+                x^y
+              </Button>
+              <Button
+                onClick={addPi}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                π
+              </Button>
+              <Button
+                onClick={() => performOperation('×')}
+                className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
+                size="lg"
+              >
+                ×
+              </Button>
 
-        {/* Row 4: Numbers 7-9 */}
-        <Button
-          onClick={() => inputNumber('7')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          7
-        </Button>
-        <Button
-          onClick={() => inputNumber('8')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          8
-        </Button>
-        <Button
-          onClick={() => inputNumber('9')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          9
-        </Button>
-        <Button
-          onClick={() => performOperation('-')}
-          className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
-          size="lg"
-        >
-          −
-        </Button>
+              {/* Row 4: Numbers 7-9 */}
+              <Button
+                onClick={() => inputNumber('7')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                7
+              </Button>
+              <Button
+                onClick={() => inputNumber('8')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                8
+              </Button>
+              <Button
+                onClick={() => inputNumber('9')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                9
+              </Button>
+              <Button
+                onClick={() => performOperation('-')}
+                className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
+                size="lg"
+              >
+                −
+              </Button>
 
-        {/* Row 5: Numbers 4-6 */}
-        <Button
-          onClick={() => inputNumber('4')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          4
-        </Button>
-        <Button
-          onClick={() => inputNumber('5')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          5
-        </Button>
-        <Button
-          onClick={() => inputNumber('6')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          6
-        </Button>
-        <Button
-          onClick={() => performOperation('+')}
-          className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
-          size="lg"
-        >
-          +
-        </Button>
+              {/* Row 5: Numbers 4-6 */}
+              <Button
+                onClick={() => inputNumber('4')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                4
+              </Button>
+              <Button
+                onClick={() => inputNumber('5')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                5
+              </Button>
+              <Button
+                onClick={() => inputNumber('6')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                6
+              </Button>
+              <Button
+                onClick={() => performOperation('+')}
+                className="bg-calc-operator hover:bg-calc-operator-hover text-calc-operator-text font-semibold"
+                size="lg"
+              >
+                +
+              </Button>
 
-        {/* Row 6: Numbers 1-3 */}
-        <Button
-          onClick={() => inputNumber('1')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          1
-        </Button>
-        <Button
-          onClick={() => inputNumber('2')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          2
-        </Button>
-        <Button
-          onClick={() => inputNumber('3')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          3
-        </Button>
-        <Button
-          onClick={toggleSign}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
-          size="lg"
-        >
-          +/−
-        </Button>
+              {/* Row 6: Numbers 1-3 */}
+              <Button
+                onClick={() => inputNumber('1')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                1
+              </Button>
+              <Button
+                onClick={() => inputNumber('2')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                2
+              </Button>
+              <Button
+                onClick={() => inputNumber('3')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                3
+              </Button>
+              <Button
+                onClick={toggleSign}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold"
+                size="lg"
+              >
+                +/−
+              </Button>
 
-        {/* Row 7: 0, decimal, rounding, equals */}
-        <Button
-          onClick={() => inputNumber('0')}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press col-span-1"
-          size="lg"
-        >
-          0
-        </Button>
-        <Button
-          onClick={inputDot}
-          className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
-          size="lg"
-        >
-          .
-        </Button>
-        <Button
-          onClick={() => roundToDecimals(2)}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm"
-          size="lg"
-        >
-          R2
-        </Button>
-        <Button
-          onClick={performEquals}
-          className="bg-gradient-primary text-calc-operator-text font-semibold shadow-lg"
-          size="lg"
-        >
-          =
-        </Button>
+              {/* Row 7: 0, decimal, rounding, equals */}
+              <Button
+                onClick={() => inputNumber('0')}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press col-span-1"
+                size="lg"
+              >
+                0
+              </Button>
+              <Button
+                onClick={inputDot}
+                className="bg-calc-number hover:bg-calc-number-hover text-calc-number-text font-semibold animate-press"
+                size="lg"
+              >
+                .
+              </Button>
+              <Button
+                onClick={() => roundToDecimals(2)}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm"
+                size="lg"
+              >
+                R2
+              </Button>
+              <Button
+                onClick={performEquals}
+                className="bg-gradient-primary text-calc-operator-text font-semibold shadow-lg"
+                size="lg"
+              >
+                =
+              </Button>
 
-        {/* Row 8: R0 (Round to 0 decimals) */}
-        <Button
-          onClick={() => roundToDecimals(0)}
-          className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm col-span-4"
-          size="lg"
-        >
-          R0 (Round to dollars)
-        </Button>
-      </div>
-    </Card>
+              {/* Row 8: R0 (Round to 0 decimals) */}
+              <Button
+                onClick={() => roundToDecimals(0)}
+                className="bg-calc-function hover:bg-calc-function-hover text-calc-function-text font-semibold text-sm col-span-4"
+                size="lg"
+              >
+                R0 (Round to dollars)
+              </Button>
+            </div>
+          </CardItem>
+        </Card>
+      </CardBody>
+    </CardContainer>
   );
 };
 
