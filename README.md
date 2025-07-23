@@ -1,4 +1,4 @@
-# dusk-calc-zen
+# Dusk-calc-zen
 
 A modern, full-featured calculator web application with memory functions, scientific operations, and a sleek user interface with dark mode support.
 
