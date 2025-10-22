@@ -1,58 +1,146 @@
-# Dusk Calc Zen 🧮
+# Dusk Calc Zen 🧮✨
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdusk-calc-zen.vercel.app%2F)](https://dusk-calc-zen.vercel.app/)
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-B73499?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+<div align="center">
 
-A modern, full-featured calculator web application with memory functions, scientific operations, and a sleek user interface with dark mode support.
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fdusk-calc-zen.vercel.app%2F&style=flat-square)](https://dusk-calc-zen.vercel.app/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-B73499?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-## 📋 Overview
+**A modern, full-featured calculator web application with memory functions, scientific operations, and a sleek user interface.**
 
-Dusk Calc Zen is a sophisticated calculator application built with modern web technologies. It combines functionality with aesthetics, offering a wide range of mathematical operations in a visually appealing interface with dark mode support.
+[Live Demo](https://dusk-calc-zen.vercel.app/) • [Report Bug](https://github.com/Blazehue/dusk-calc-zen/issues) • [Request Feature](https://github.com/Blazehue/dusk-calc-zen/issues)
+
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [Overview](#-overview)
+- [Features](#-features)
+- [Screenshots](#-screenshots)
+- [Technology Stack](#-technology-stack)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Development](#development)
+  - [Building for Production](#building-for-production)
+- [Usage Guide](#-usage-guide)
+- [Project Structure](#-project-structure)
+- [Keyboard Shortcuts](#-keyboard-shortcuts)
+- [Browser Support](#-browser-support)
+- [Contributing](#-contributing)
+- [Roadmap](#-roadmap)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
+- [Contact](#-contact)
+
+---
+
+## 🎯 Overview
+
+**Dusk Calc Zen** is a sophisticated calculator application that combines powerful functionality with modern design aesthetics. Built with React and TypeScript, it offers a seamless calculation experience with features ranging from basic arithmetic to scientific operations, all wrapped in an elegant interface with dark mode support.
+
+Whether you're doing quick calculations or complex mathematical operations, Dusk Calc Zen provides an intuitive and visually appealing tool that works flawlessly across all devices.
+
+---
 
 ## ✨ Features
 
-### Core Functionality
-- **Basic Arithmetic Operations**: Addition, subtraction, multiplication, and division
-- **Memory Functions**: Store, recall, add to, and subtract from memory (MC, MR, M+, M-)
-- **Scientific Operations**: Square root, exponents, percentage calculations, and Pi (π)
-- **Rounding**: Round the displayed number to 0 or 2 decimal places
-- **Sign Toggle**: Change the sign of the displayed number (+/-)
-- **Clear Functions**: Clear the entire calculator (AC) or the current entry (CE)
+### 🧮 Core Functionality
+- **Basic Arithmetic Operations**: Addition (+), subtraction (-), multiplication (×), and division (÷)
+- **Memory Functions**: Complete memory management with MC (Memory Clear), MR (Memory Recall), M+ (Memory Add), and M- (Memory Subtract)
+- **Scientific Operations**: 
+  - Square root (√)
+  - Exponentiation (x²)
+  - Percentage calculations (%)
+  - Pi constant (π)
+- **Number Formatting**: 
+  - Round to 0 decimal places
+  - Round to 2 decimal places
+- **Sign Toggle**: Quickly change between positive and negative numbers (+/-)
+- **Clear Functions**: 
+  - AC (All Clear) - Reset everything
+  - CE (Clear Entry) - Clear current entry only
 
-### User Experience
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Dark Mode**: Toggle between light and dark themes with persistent settings
-- **3D Card Effect**: Visually appealing 3D card effect for the calculator interface
-- **Toaster Notifications**: User feedback through toast notifications
+### 🎨 User Experience
+- **🌓 Dark Mode**: Toggle between light and dark themes with settings persistence across sessions
+- **📱 Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+- **🎴 3D Card Effect**: Eye-catching 3D card design for the calculator interface
+- **🔔 Toast Notifications**: Real-time user feedback for actions and errors
+- **⚡ Lightning Fast**: Built with Vite for instant hot module replacement and blazing-fast performance
+- **♿ Accessible**: Built with accessibility in mind using Radix UI primitives
+
+### 🎯 Additional Highlights
+- **Persistent State**: Your preferences and settings are saved locally
+- **Error Handling**: Graceful error messages for invalid operations
+- **Decimal Support**: Full support for decimal number calculations
+- **Continuous Calculations**: Chain multiple operations seamlessly
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+### Light Mode
+*Modern, clean interface for daytime use*
+
+### Dark Mode
+*Easy on the eyes for low-light environments*
+
+### Mobile View
+*Fully responsive design that works on any device*
+
+</div>
+
+---
 
 ## 🛠️ Technology Stack
 
-### Frontend
-- **React**: JavaScript library for building user interfaces
-- **TypeScript**: Superset of JavaScript that adds static typing
-- **Vite**: Build tool that provides a fast and efficient development experience
-- **Tailwind CSS**: Utility-first CSS framework for rapid styling
-- **React Router**: For handling navigation between different pages
+### Frontend Framework
+- **[React 18](https://reactjs.org/)** - Modern UI library with concurrent features
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript for robust code
+- **[Vite](https://vitejs.dev/)** - Next-generation frontend tooling with instant server start
 
-### UI Components
-- **Radix UI**: Unstyled, accessible UI primitives
-- **Lucide React**: Icon library
-- **React Query**: Data fetching and state management (setup for future API integrations)
-- **Sonner**: Toast notification library
+### Styling & UI
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible component primitives
+- **[Lucide React](https://lucide.dev/)** - Beautiful & consistent icon library
+- **[class-variance-authority](https://cva.style/)** - CSS-in-TS utility for component variants
 
-## 📋 Prerequisites
+### State Management & Data
+- **[TanStack Query](https://tanstack.com/query)** (React Query) - Powerful data fetching and state management
+- **LocalStorage API** - For persisting user preferences
 
-- Node.js (version 18 or higher is recommended)
-- npm or yarn package manager
+### Routing & Notifications
+- **[React Router DOM](https://reactrouter.com/)** - Declarative routing for React applications
+- **[Sonner](https://sonner.emilkowal.ski/)** - Elegant toast notifications
 
-## 🌐 Live Demo
+### Development Tools
+- **ESLint** - Code linting and quality enforcement
+- **PostCSS** - CSS transformation and optimization
+- **Autoprefixer** - Automatic CSS vendor prefixing
 
-Check out the live version: [https://dusk-calc-zen.vercel.app/](https://dusk-calc-zen.vercel.app/)
+---
 
-## 🚀 Installation
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v18.0.0 or higher) - [Download here](https://nodejs.org/)
+- **npm** (v9.0.0 or higher) or **yarn** (v1.22.0 or higher)
+
+Check your versions:
+```bash
+node --version
+npm --version
+```
+
+### Installation
 
 1. **Clone the repository**:
    ```bash
@@ -62,44 +150,210 @@ Check out the live version: [https://dusk-calc-zen.vercel.app/](https://dusk-cal
 
 2. **Install dependencies**:
    ```bash
-   npm install  # Or yarn install
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
    ```
 
-## 📖 Usage
+### Development
 
-1. **Start the development server**:
-   ```bash
-   npm run dev  # Or yarn dev
-   ```
+Start the development server with hot module replacement:
 
-2. **Open your browser** and navigate to the address provided by Vite (usually `http://localhost:5173/`)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-3. **Use the calculator interface** to perform calculations. Click the buttons to input numbers and operations
+The application will be available at `http://localhost:5173/` (or another port if 5173 is in use).
 
-## 📡 API Documentation
+### Building for Production
 
-This project currently doesn't utilize any external APIs. The `react-query` setup in `src/App.tsx` is present for potential future API integrations.
+Create an optimized production build:
 
-## 🤝 Contributing
+```bash
+npm run build
+# or
+yarn build
+# or
+pnpm build
+```
 
-Contributions are welcome! Please follow these steps:
+Preview the production build locally:
 
-1. **Fork the repository**
-2. **Create a new branch** for your feature or bug fix
-3. **Make your changes** and commit them with descriptive commit messages
-4. **Push your changes** to your fork
-5. **Submit a pull request** to the `main` branch of the original repository
-
-## 📄 License
-
-License is not specified.
-
-## 📞 Contact
-
-For questions, bug reports, or feature requests, please open an issue on the GitHub repository: [https://github.com/Blazehue/dusk-calc-zen](https://github.com/Blazehue/dusk-calc-zen)
+```bash
+npm run preview
+# or
+yarn preview
+# or
+pnpm preview
+```
 
 ---
 
-<p align="center">
-  Made with ❤️ by <a href="https://github.com/Blazehue">Blazehue</a>
-</p>
+## 📖 Usage Guide
+
+### Basic Operations
+
+1. **Input Numbers**: Click on number buttons (0-9) or use your keyboard
+2. **Perform Operations**: Click operation buttons (+, -, ×, ÷) or use keyboard shortcuts
+3. **Get Results**: Press the equals button (=) or Enter key
+4. **Clear**: Use AC to clear everything or CE to clear the current entry
+
+### Memory Functions
+
+- **MC (Memory Clear)**: Clears the value stored in memory
+- **MR (Memory Recall)**: Displays the value stored in memory
+- **M+ (Memory Add)**: Adds the current display value to memory
+- **M- (Memory Subtract)**: Subtracts the current display value from memory
+
+### Scientific Operations
+
+- **√ (Square Root)**: Calculates the square root of the displayed number
+- **x² (Square)**: Squares the displayed number
+- **% (Percentage)**: Converts the displayed number to a percentage
+- **π (Pi)**: Inserts the value of Pi (3.14159...)
+
+### Rounding
+
+- **0 decimal**: Rounds to the nearest integer
+- **2 decimal**: Rounds to two decimal places
+
+---
+
+## 📁 Project Structure
+
+```
+dusk-calc-zen/
+├── public/              # Static assets
+├── src/
+│   ├── components/      # React components
+│   │   ├── ui/         # Reusable UI components (Radix UI)
+│   │   └── ...         # Feature-specific components
+│   ├── lib/            # Utility functions and helpers
+│   ├── hooks/          # Custom React hooks
+│   ├── pages/          # Page components (routes)
+│   ├── App.tsx         # Main application component
+│   ├── main.tsx        # Application entry point
+│   └── index.css       # Global styles
+├── index.html          # HTML template
+├── package.json        # Dependencies and scripts
+├── tsconfig.json       # TypeScript configuration
+├── vite.config.ts      # Vite configuration
+├── tailwind.config.js  # Tailwind CSS configuration
+└── README.md           # Project documentation
+```
+
+---
+
+## ⌨️ Keyboard Shortcuts
+
+Enhance your productivity with keyboard shortcuts:
+
+| Key | Action |
+|-----|--------|
+| `0-9` | Input numbers |
+| `+` | Addition |
+| `-` | Subtraction |
+| `*` | Multiplication |
+| `/` | Division |
+| `Enter` or `=` | Calculate result |
+| `Backspace` | Clear last entry |
+| `Escape` | All clear |
+| `.` | Decimal point |
+
+---
+
+## 🌐 Browser Support
+
+Dusk Calc Zen supports all modern browsers:
+
+- ✅ Chrome (last 2 versions)
+- ✅ Firefox (last 2 versions)
+- ✅ Safari (last 2 versions)
+- ✅ Edge (last 2 versions)
+- ✅ Opera (last 2 versions)
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+### How to Contribute
+
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+### Contribution Guidelines
+
+- Follow the existing code style and conventions
+- Write clear, descriptive commit messages
+- Add tests for new features when applicable
+- Update documentation as needed
+- Ensure all tests pass before submitting
+
+---
+
+## 🗺️ Roadmap
+
+Future enhancements planned for Dusk Calc Zen:
+
+- [ ] **History Panel**: View and reuse previous calculations
+- [ ] **Advanced Scientific Mode**: Trigonometric functions, logarithms, and more
+- [ ] **Custom Themes**: User-defined color schemes
+- [ ] **Keyboard-Only Mode**: Full navigation without mouse
+- [ ] **Export/Import Settings**: Share calculator configurations
+- [ ] **Multi-language Support**: Internationalization (i18n)
+- [ ] **Calculation History Export**: Save history as CSV or PDF
+- [ ] **Programmer Mode**: Binary, hexadecimal, and octal calculations
+- [ ] **Unit Converter**: Built-in converter for common units
+- [ ] **Currency Converter**: Real-time currency conversion with API integration
+
+See the [open issues](https://github.com/Blazehue/dusk-calc-zen/issues) for a full list of proposed features and known issues.
+
+---
+
+## 📄 License
+
+This project is currently unlicensed. Please contact the repository owner for usage permissions.
+
+---
+
+## 🙏 Acknowledgments
+
+Special thanks to:
+
+- [React Team](https://reactjs.org/) for the amazing framework
+- [Vercel](https://vercel.com/) for seamless deployment and hosting
+- [Tailwind Labs](https://tailwindcss.com/) for the utility-first CSS framework
+- [Radix UI](https://www.radix-ui.com/) for accessible component primitives
+- [Lucide](https://lucide.dev/) for the beautiful icon set
+- All contributors and users of Dusk Calc Zen
+
+---
+
+## 📞 Contact
+
+**Blazehue** - [@Blazehue](https://github.com/Blazehue)
+
+**Project Link**: [https://github.com/Blazehue/dusk-calc-zen](https://github.com/Blazehue/dusk-calc-zen)
+
+**Live Demo**: [https://dusk-calc-zen.vercel.app/](https://dusk-calc-zen.vercel.app/)
+
+---
+
+<div align="center">
+
+### ⭐ Star this repository if you find it helpful!
+
+Made with ❤️ and ☕ by [Blazehue](https://github.com/Blazehue)
+
+</div>
