@@ -1,4 +1,4 @@
-# Dusk Calc Zen
+# DuskCalcZen
 
 <div align="center">
 
